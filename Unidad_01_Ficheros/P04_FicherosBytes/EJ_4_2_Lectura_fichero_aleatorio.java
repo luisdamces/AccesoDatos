@@ -20,7 +20,7 @@ public class EJ_4_2_Lectura_fichero_aleatorio {
 		File f = new File("Unidad_01_Ficheros\\P04_FicherosBytes\\Ficheros\\ej_4_fichero_aleatorio.dat");
 		RandomAccessFile raf = new RandomAccessFile (f, "r");//r->Modo lectura	
 		int id, posicion=0;
-		char[] apellidos = new char [10];
+		char[] capellido = new char [10];
 		char aux;
 		String apellido;
 		int dpto;
@@ -38,17 +38,17 @@ public class EJ_4_2_Lectura_fichero_aleatorio {
 				1 String = 2B * 10 = 20B
 				Total = 36B*/
 				
-				for(int i=0;i<apellidos.length;i++) {
+				for(int i=0;i<capellido.length;i++) {
 					aux=raf.readChar();
-					apellidos[i]=aux;
+					capellido[i]=aux;
 				}
 				
-				apellido = new String(apellidos);
+				apellido = new String(capellido);
 				
 				dpto = raf.readInt();
 				salario = raf.readDouble();
 				
-				System.out.println("Id: "+id+" Apellidos: "+apellido+" Departamento: "+dpto+" Salario: "+salario);
+				System.out.println("Id: "+id+" Apellido: "+apellido+" Departamento: "+dpto+" Salario: "+salario);
 						
 			}while(raf.getFilePointer()!=raf.length());
 			/*.getFilePointer nos dice hacia donde est� apuntando el puntero
